@@ -97,13 +97,13 @@ def display_chart(data, x_column, y_column, title, x_label, y_label, chart_type)
     elif chart_type == "🥧 Pie Chart":
         fig = px.pie(data, names=x_column, values=y_column, title=title,
                      color_discrete_sequence=px.colors.qualitative.Set3)
-    # elif chart_type == "📈 Line Chart":
-    #     fig = px.line(data, x=x_column, y=y_column, title=title, labels={x_column: x_label, y_column: y_label},
-    #                   color_discrete_sequence=["#FFA07A"])  # Light Salmon
-    # else:
-    #     fig = px.scatter(data, x=x_column, y=y_column, title=title, labels={x_column: x_label, y_column: y_label},
-    #                      color_discrete_sequence=["#FF7043"])  # Soft Orange
-    # st.plotly_chart(fig)
+    elif chart_type == "📈 Line Chart":
+        fig = px.line(data, x=x_column, y=y_column, title=title, labels={x_column: x_label, y_column: y_label},
+                      color_discrete_sequence=["#FFA07A"])  # Light Salmon
+    else:
+        fig = px.scatter(data, x=x_column, y=y_column, title=title, labels={x_column: x_label, y_column: y_label},
+                         color_discrete_sequence=["#FF7043"])  # Soft Orange
+    st.plotly_chart(fig)
 # Home Page
 if page ==  "🏠 Home":
     st.title("📊 Welcome to the Pakistan Population Analysis")
